@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+    postgre:
+        image: postgres:14.1-alpine
+        container_name: postgre
+        restart: always
+        environment:
+            - POSTGRES_USER=thomas
+            - POSTGRES_PASSWORD=MySQL08022000
+        ports:
+            - 9255:5432
+        volumes:
+            - ./:/docker-entrypoint-initdb.d
+            - data:/var/lib/posgresql/data
+
+volumes:
+    data:
+        driver: local
