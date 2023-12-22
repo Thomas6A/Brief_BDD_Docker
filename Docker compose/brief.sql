@@ -23,7 +23,6 @@ SET row_security = off;
 -- Name: public; Type: SCHEMA; Schema: -; Owner: thomas
 --
 
-CREATE ROLE "User" WITH LOGIN PASSWORD 'mdp';
 
 ALTER SCHEMA public OWNER TO thomas;
 
@@ -686,6 +685,8 @@ ALTER TABLE ONLY public."Realise"
 REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
+
+CREATE ROLE "User" WITH PASSWORD 'mdp';
 
 --
 -- TOC entry 3394 (class 0 OID 0)
